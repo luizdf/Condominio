@@ -9,6 +9,7 @@ import javax.persistence.*;
  * 
  */
 @Entity
+@Table(name="consumo")
 @NamedQueries({@NamedQuery(name = "Consumo.findById", query = "SELECT o FROM Consumo o WHERE o.id = :id"),
 	@NamedQuery(name = "Consumo.findAll", query = "SELECT o FROM Consumo o")})
 public class Consumo implements Serializable {
@@ -18,6 +19,7 @@ public class Consumo implements Serializable {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
 
+	@Column
 	private float valor;
 
 	//bi-directional many-to-one association to Unidade

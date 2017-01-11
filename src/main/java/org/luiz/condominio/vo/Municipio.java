@@ -10,6 +10,7 @@ import java.util.List;
  * 
  */
 @Entity
+@Table(name="municipio")
 @NamedQueries({@NamedQuery(name = "Municipio.findById", query = "SELECT o FROM Municipio o WHERE o.id = :id"),
 	@NamedQuery(name = "Municipio.findAll", query = "SELECT o FROM Municipio o")})
 public class Municipio implements Serializable {
@@ -19,6 +20,7 @@ public class Municipio implements Serializable {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
 
+	@Column
 	private String nome;
 
 	@OneToMany(mappedBy="municipio")

@@ -10,6 +10,7 @@ import java.util.List;
  * 
  */
 @Entity
+@Table(name="unidademedida")
 @NamedQueries({@NamedQuery(name = "UnidadeMedida.findById", query = "SELECT o FROM UnidadeMedida o WHERE o.id = :id"),
 	@NamedQuery(name = "UnidadeMedida.findAll", query = "SELECT o FROM UnidadeMedida o")})
 public class UnidadeMedida implements Serializable {
@@ -19,6 +20,7 @@ public class UnidadeMedida implements Serializable {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
 
+	@Column
 	private String nome;
 
 	//bi-directional many-to-one association to Consumo

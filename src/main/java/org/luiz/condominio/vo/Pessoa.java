@@ -10,6 +10,7 @@ import java.util.Date;
  * 
  */
 @Entity
+@Table(name="pessoa")
 @NamedQueries({@NamedQuery(name = "Pessoa.findById", query = "SELECT o FROM Pessoa o WHERE o.id = :id"),
 	@NamedQuery(name = "Pessoa.findAll", query = "SELECT o FROM Pessoa o")})
 public class Pessoa implements Serializable {
@@ -19,11 +20,14 @@ public class Pessoa implements Serializable {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
 
+	@Column
 	private String cpf;
 
+	@Column
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date datanascimento;
 
+	@Column
 	private String nome;
 
 	//bi-directional many-to-one association to Unidade

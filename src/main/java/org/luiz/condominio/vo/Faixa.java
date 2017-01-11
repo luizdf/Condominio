@@ -10,6 +10,7 @@ import java.util.List;
  * 
  */
 @Entity
+@Table(name="faixa")
 @NamedQueries({@NamedQuery(name = "Faixa.findById", query = "SELECT o FROM Faixa o WHERE o.id = :id"),
 	@NamedQuery(name = "Faixa.findAll", query = "SELECT o FROM Faixa o")})
 public class Faixa implements Serializable {
@@ -19,10 +20,13 @@ public class Faixa implements Serializable {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
 
+	@Column
 	private String nome;
 
+	@Column
 	private float valorFinal;
 
+	@Column
 	private float valorInicial;
 
 	//bi-directional many-to-one association to Tarifa

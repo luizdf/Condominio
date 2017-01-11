@@ -11,6 +11,7 @@ import java.util.List;
  * 
  */
 @Entity
+@Table(name="competencia")
 @NamedQueries({@NamedQuery(name = "Competencia.findById", query = "SELECT o FROM Competencia o WHERE o.id = :id"),
 	@NamedQuery(name = "Competencia.findAll", query = "SELECT o FROM Competencia o")})
 public class Competencia implements Serializable {
@@ -20,9 +21,11 @@ public class Competencia implements Serializable {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
 
+	@Column
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date datafim;
 
+	@Column
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date datainicio;
 

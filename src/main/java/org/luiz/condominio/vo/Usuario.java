@@ -9,6 +9,7 @@ import javax.persistence.*;
  * 
  */
 @Entity
+@Table(name="usuario")
 @NamedQueries({@NamedQuery(name = "Usuario.findById", query = "SELECT o FROM Usuario o WHERE o.id = :id"),
 	@NamedQuery(name = "Usuario.findByLogin", query = "SELECT o FROM Usuario o WHERE o.login = :login"),
 	@NamedQuery(name = "Usuario.findAll", query = "SELECT o FROM Usuario o")})
@@ -18,11 +19,11 @@ public class Usuario implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
-
+	@Column
 	private String nome;
-
+	@Column
 	private String login;
-
+	@Column
 	private String senha;
 
 	//bi-directional many-to-one association to Pessoa

@@ -10,6 +10,7 @@ import java.util.List;
  * 
  */
 @Entity
+@Table(name="estado")
 @NamedQueries({@NamedQuery(name = "Estado.findById", query = "SELECT o FROM Estado o WHERE o.id = :id"),
 	@NamedQuery(name = "Estado.findBySigla", query = "SELECT o FROM Estado o WHERE o.sigla = :sigla"),
 	@NamedQuery(name = "Estado.findAll", query = "SELECT o FROM Estado o")})
@@ -20,8 +21,10 @@ public class Estado implements Serializable {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
 
+	@Column
 	private String nome;
 
+	@Column
 	private String sigla;
 
 	//bi-directional many-to-one association to Municipio
