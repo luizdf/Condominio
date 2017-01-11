@@ -43,7 +43,7 @@ public class LoginPage extends WebPage {
 	    cfg.addAnnotatedClass(Usuario.class);
 	        
 	    SchemaExport schemaExport = new SchemaExport();
-	    schemaExport.<b>create</b>(true, true);
+//	    schemaExport.<b>create</b>(true, true);
 	}
 	
 }
