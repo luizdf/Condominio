@@ -1,0 +1,5 @@
+mysql://ba322c062fdd07:6bd8da8a@us-cdbr-iron-east-04.cleardb.net/heroku_bd28eeb65b43660?reconnect=true
+Host: us-cdbr-iron-east-04.cleardb.net
+Usuário: ba322c062fdd07
+Senha: 6bd8da8a
+Banco: heroku_bd28eeb65b43660
