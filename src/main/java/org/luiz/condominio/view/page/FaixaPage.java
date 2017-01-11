@@ -43,11 +43,12 @@ public class FaixaPage extends BasePage {
 		adicionaCampos();
     }
 
+	@SuppressWarnings("rawtypes")
 	private void adicionaCampos(){
 		final int itensPage = 7;
         List<Faixa> list = FaixaDelegate.getInstance().findAll();
           
-        @SuppressWarnings({ "unchecked", "rawtypes" })
+        @SuppressWarnings({ "unchecked" })
 		final DataView dataView = new DataView("rowTblFaixa", new ListDataProvider(list)) {
 
 			/**
@@ -55,6 +56,7 @@ public class FaixaPage extends BasePage {
 			 */
 			private static final long serialVersionUID = 1L;
 
+			@SuppressWarnings("serial")
 			@Override
 			protected void populateItem(final Item item) {
                 final Faixa objeto = (Faixa) item.getModelObject();
@@ -74,7 +76,12 @@ public class FaixaPage extends BasePage {
                 
                 Link linkExcluir = new Link("linkExcluir") {
 
-        	        @Override
+        	        /**
+					 * 
+					 */
+					private static final long serialVersionUID = 1L;
+
+					@Override
 					public void onClick() {
 		        		Faixa faixa = (Faixa)item.getModelObject();
 		        		FaixaDelegate.getInstance().excluir(faixa);
@@ -93,6 +100,11 @@ public class FaixaPage extends BasePage {
         add(new PagingNavigator("navTblFaixa", dataView).setVisible(list.size() > itensPage));
         
         Link linkNovoRegistro = new Link("linkNovoRegistro"){
+			/**
+			 * 
+			 */
+			private static final long serialVersionUID = 1L;
+
 			@Override
 			public void onClick() {
         		Faixa faixa = new Faixa();

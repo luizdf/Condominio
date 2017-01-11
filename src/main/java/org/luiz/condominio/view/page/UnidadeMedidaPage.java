@@ -43,11 +43,12 @@ public class UnidadeMedidaPage extends BasePage {
 		adicionaCampos();
     }
 
+	@SuppressWarnings("rawtypes")
 	private void adicionaCampos(){
 		final int itensPage = 7;
         List<UnidadeMedida> list = UnidadeMedidaDelegate.getInstance().findAll();
           
-        @SuppressWarnings({ "unchecked", "rawtypes" })
+        @SuppressWarnings({ "unchecked" })
 		final DataView dataView = new DataView("rowTblUnidadeMedida", new ListDataProvider(list)) {
 
 			/**
@@ -55,6 +56,7 @@ public class UnidadeMedidaPage extends BasePage {
 			 */
 			private static final long serialVersionUID = 1L;
 
+			@SuppressWarnings("serial")
 			@Override
 			protected void populateItem(final Item item) {
                 final UnidadeMedida objeto = (UnidadeMedida) item.getModelObject();
@@ -91,6 +93,11 @@ public class UnidadeMedidaPage extends BasePage {
         add(new PagingNavigator("navTblUnidadeMedida", dataView).setVisible(list.size() > itensPage));
         
         Link linkNovoRegistro = new Link("linkNovoRegistro"){
+			/**
+			 * 
+			 */
+			private static final long serialVersionUID = 1L;
+
 			@Override
 			public void onClick() {
 				UnidadeMedida unidadeMedida = new UnidadeMedida();
