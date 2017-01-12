@@ -1,1 +1,1 @@
-web:    java -jar target/Condominio.jar
+web: java $JAVA_OPTS -cp target/classes:target/dependency/* condominiu
