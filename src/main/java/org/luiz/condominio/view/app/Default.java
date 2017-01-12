@@ -13,6 +13,10 @@ import org.luiz.condominio.view.page.LoginPage;
  */
 public class Default extends WebApplication {
 
+	public static void main(String[] args){
+
+	}
+
 	/* (non-Javadoc)
 	 * @see org.apache.wicket.Application#getHomePage()
 	 */
