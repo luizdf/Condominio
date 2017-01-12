@@ -3,7 +3,7 @@
              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
 
-	<persistence-unit name="condominio" transaction-type="RESOURCE_LOCAL">
+	<persistence-unit name="condominiu" transaction-type="RESOURCE_LOCAL">
     	<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 		<class>org.luiz.condominio.vo.Competencia</class>
 		<class>org.luiz.condominio.vo.Consumo</class>
@@ -13,10 +13,10 @@
 		<class>org.luiz.condominio.vo.Municipio</class>
 		<class>org.luiz.condominio.vo.Pessoa</class>
 		<class>org.luiz.condominio.vo.Tarifa</class>
-		<class>org.luiz.condominio.vo.Unidade</class>
-		<class>org.luiz.condominio.vo.Usuario</class>
-		<class>org.luiz.condominio.vo.UnidadeMedida</class>
 		<class>org.luiz.condominio.vo.TipoConsumo</class>
+		<class>org.luiz.condominio.vo.Unidade</class>
+		<class>org.luiz.condominio.vo.UnidadeMedida</class>
+		<class>org.luiz.condominio.vo.Usuario</class>
 		<exclude-unlisted-classes>false</exclude-unlisted-classes>
 
 		<properties>

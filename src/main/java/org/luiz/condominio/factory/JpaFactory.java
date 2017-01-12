@@ -13,7 +13,7 @@ public final class JpaFactory {
 	private static final EntityManager entityManager;
   
     static {
-		fabrica = Persistence.createEntityManagerFactory("condominio");
+		fabrica = Persistence.createEntityManagerFactory("condominiu");
 		entityManager = fabrica.createEntityManager();
     }
     
