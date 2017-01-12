@@ -20,20 +20,16 @@
 		<exclude-unlisted-classes>false</exclude-unlisted-classes>
 
 		<properties>
-<!-- 			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" /> -->
-<!--			<property name="javax.persistence.schema-generation.create-database-schemas" value="true"/> -->
+			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />
+<!-- 			<property name="hibernate.hbm2dll.auto" value="update" /> -->			
 			
-			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect" />
-			<property name="hibernate.hbm2dll.auto" value="update" />			
-			
-			<property name="hibernate.connection.driver_class" value="com.mysql.cj.jdbc.Driver" />  
+			<property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver" />  
 			<property name="hibernate.show_sql" value="false" />    
 			<property name="hibernate.format_sql" value="true" />     
 
 			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://us-cdbr-iron-east-04.cleardb.net:3306/heroku_bd28eeb65b43660?serverTimezone=UTC"/>
 			<property name="javax.persistence.jdbc.user" value="ba322c062fdd07"/>
 			<property name="javax.persistence.jdbc.password" value="6bd8da8a"/>
-			<property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
 		</properties>
 
 	</persistence-unit>

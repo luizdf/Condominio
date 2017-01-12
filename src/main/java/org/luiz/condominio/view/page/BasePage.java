@@ -4,10 +4,12 @@
 package org.luiz.condominio.view.page;
 
 import org.apache.wicket.AttributeModifier;
+import org.apache.wicket.MarkupContainer;
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.link.BookmarkablePageLink;
 import org.apache.wicket.markup.html.link.Link;
+import org.apache.wicket.model.IModel;
 import org.apache.wicket.model.PropertyModel;
 import org.luiz.condominio.view.app.Sessao;
 import org.luiz.condominio.vo.Usuario;
@@ -35,7 +37,7 @@ public class BasePage extends WebPage {
         PropertyModel<String> mdlNomeLogin = new PropertyModel<String>(getUsuario(), "nome");
         Label campoNomeLogin = new Label("nomeLogin",mdlNomeLogin);
         add(campoNomeLogin);
-        
+
 		Link linkSair = new Link("linkSair"){
 	    	/**
 			 * 
@@ -47,7 +49,12 @@ public class BasePage extends WebPage {
 	    		Sessao.getInstancia(getRequest()).setAtributo("usuario",null);
 	    		setResponsePage(LoginPage.class);
 	    	}
-	    };
+
+			@Override
+			public MarkupContainer setDefaultModel(IModel model) {
+				return super.setDefaultModel(model);
+			}
+		};
 	    linkSair.add(new AttributeModifier("onclick", "return confirm('Deseja Sair?');"));
 	    add(linkSair);
 
@@ -61,7 +68,12 @@ public class BasePage extends WebPage {
 	    	public void onClick() {
 	    		setResponsePage(UsuarioPage.class);
 	    	}
-	    };
+
+			@Override
+			public MarkupContainer setDefaultModel(IModel model) {
+				return super.setDefaultModel(model);
+			}
+		};
 	    add(linkMeusDados);        
 	}
 

@@ -6,12 +6,14 @@ package org.luiz.condominio.view.page;
 import java.util.List;
 
 import org.apache.wicket.AttributeModifier;
+import org.apache.wicket.MarkupContainer;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.link.Link;
 import org.apache.wicket.markup.html.navigation.paging.PagingNavigator;
 import org.apache.wicket.markup.repeater.Item;
 import org.apache.wicket.markup.repeater.data.DataView;
 import org.apache.wicket.markup.repeater.data.ListDataProvider;
+import org.apache.wicket.model.IModel;
 import org.luiz.condominio.delegate.FaixaDelegate;
 import org.luiz.condominio.view.form.FormCadFaixa;
 import org.luiz.condominio.vo.Faixa;
@@ -72,7 +74,12 @@ public class FaixaPage extends BasePage {
 		        		Faixa faixa = (Faixa)item.getModelObject();
 		        		setResponsePage(new FaixaPage(faixa));
 					}
-				});
+
+					@Override
+					public MarkupContainer setDefaultModel(IModel model) {
+						return super.setDefaultModel(model);
+					}
+                });
                 
                 Link linkExcluir = new Link("linkExcluir") {
 
@@ -87,7 +94,12 @@ public class FaixaPage extends BasePage {
 		        		FaixaDelegate.getInstance().excluir(faixa);
 		        		setResponsePage(FaixaPage.class);
 					}
-				};
+
+					@Override
+					public MarkupContainer setDefaultModel(IModel model) {
+						return super.setDefaultModel(model);
+					}
+                };
                 
     	        linkExcluir.add(new AttributeModifier("onclick", "return confirm('Excluir Registro?');"));
                 item.add(linkExcluir);
@@ -109,6 +121,11 @@ public class FaixaPage extends BasePage {
 			public void onClick() {
         		Faixa faixa = new Faixa();
         		setResponsePage(new FaixaPage(faixa));
+			}
+
+			@Override
+			public MarkupContainer setDefaultModel(IModel model) {
+				return super.setDefaultModel(model);
 			}
         };
         

@@ -6,12 +6,14 @@ package org.luiz.condominio.view.page;
 import java.util.List;
 
 import org.apache.wicket.AttributeModifier;
+import org.apache.wicket.MarkupContainer;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.link.Link;
 import org.apache.wicket.markup.html.navigation.paging.PagingNavigator;
 import org.apache.wicket.markup.repeater.Item;
 import org.apache.wicket.markup.repeater.data.DataView;
 import org.apache.wicket.markup.repeater.data.ListDataProvider;
+import org.apache.wicket.model.IModel;
 import org.luiz.condominio.delegate.UnidadeMedidaDelegate;
 import org.luiz.condominio.view.form.FormCadUnidadeMedida;
 import org.luiz.condominio.vo.UnidadeMedida;
@@ -70,6 +72,11 @@ public class UnidadeMedidaPage extends BasePage {
 						UnidadeMedida unidadeMedida = (UnidadeMedida)item.getModelObject();
 		        		setResponsePage(new UnidadeMedidaPage(unidadeMedida));
 					}
+					
+					@Override
+					public MarkupContainer setDefaultModel(IModel model) {
+						return super.setDefaultModel(model);
+					}
 				});
                 
                 Link linkExcluir = new Link("linkExcluir") {
@@ -80,6 +87,11 @@ public class UnidadeMedidaPage extends BasePage {
         	        	UnidadeMedidaDelegate.getInstance().excluir(unidadeMedida);
 		        		setResponsePage(UnidadeMedidaPage.class);
 					}
+        	        
+        			@Override
+        			public MarkupContainer setDefaultModel(IModel model) {
+        				return super.setDefaultModel(model);
+        			}
 				};
                 
     	        linkExcluir.add(new AttributeModifier("onclick", "return confirm('Excluir Registro?');"));
@@ -102,6 +114,11 @@ public class UnidadeMedidaPage extends BasePage {
 			public void onClick() {
 				UnidadeMedida unidadeMedida = new UnidadeMedida();
         		setResponsePage(new UnidadeMedidaPage(unidadeMedida));
+			}
+
+			@Override
+			public MarkupContainer setDefaultModel(IModel model) {
+				return super.setDefaultModel(model);
 			}
         };
         
