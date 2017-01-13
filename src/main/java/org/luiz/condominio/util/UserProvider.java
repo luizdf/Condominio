@@ -20,6 +20,7 @@ import org.apache.wicket.model.PropertyModel;
  * @author luizantonioalmeida
  *
  */
+@SuppressWarnings({ "rawtypes", "deprecation" })
 public class UserProvider extends SortableDataProvider {
 	 
     /**
@@ -28,7 +29,13 @@ public class UserProvider extends SortableDataProvider {
 	private static final long serialVersionUID = 1L;
 
 	class SortableDataProviderComparator implements Comparator<Contact>, Serializable {
-        public int compare(final Contact o1, final Contact o2) {
+        /**
+		 * 
+		 */
+		private static final long serialVersionUID = 1L;
+
+		@SuppressWarnings("unchecked")
+		public int compare(final Contact o1, final Contact o2) {
             PropertyModel<Comparable> model1 = new PropertyModel<Comparable>(o1, getSort().getProperty().toString());
             PropertyModel<Comparable> model2 = new PropertyModel<Comparable>(o2, getSort().getProperty().toString());
  
@@ -74,7 +81,12 @@ public class UserProvider extends SortableDataProvider {
  
     public IModel<Contact> model(final Object object) {
         return new AbstractReadOnlyModel<Contact>() {
-            @Override
+            /**
+			 * 
+			 */
+			private static final long serialVersionUID = 1L;
+
+			@Override
             public Contact getObject() {
                 return (Contact) object;
             }
@@ -90,7 +102,11 @@ public class UserProvider extends SortableDataProvider {
  
 class Contact implements Serializable {
  
-    private final Name name;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private final Name name;
  
     public Contact(final Name name) {
         this.name = name;
@@ -103,7 +119,11 @@ class Contact implements Serializable {
  
 class Name implements Serializable {
  
-    private String firstName;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private String firstName;
     private String lastName;
  
     public Name(final String fName, final String lName) {
