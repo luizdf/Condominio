@@ -5,10 +5,7 @@
 
   <groupId>org.luiz</groupId>
   <artifactId>Condominio</artifactId>
-  <packaging>war</packaging>
-
   <version>0.0.1-SNAPSHOT</version>
-
   <name>Condomínio</name>
   <url>http://maven.apache.org</url>
   <properties>
