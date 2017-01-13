@@ -2,6 +2,8 @@ package org.luiz.condominio.factory;
 
 import javax.persistence.*;
 
+import org.apache.log4j.BasicConfigurator;
+
 /**
  * @author luizantonioalmeida
  *
@@ -13,6 +15,7 @@ public final class JpaFactory {
 	private static final EntityManager entityManager;
   
     static {
+        BasicConfigurator.configure();
 		fabrica = Persistence.createEntityManagerFactory("condominiu");
 		entityManager = fabrica.createEntityManager();
     }

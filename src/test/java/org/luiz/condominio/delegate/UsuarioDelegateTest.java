@@ -26,6 +26,7 @@ public class UsuarioDelegateTest {
 	@Test
 	public void teste1_Incluir() {
 		Usuario objetoTest = new Usuario();
+		objetoTest.setNome("Rayanne Negreiros");
 		objetoTest.setLogin("rayanne");
 		objetoTest.setSenha("12345");
 

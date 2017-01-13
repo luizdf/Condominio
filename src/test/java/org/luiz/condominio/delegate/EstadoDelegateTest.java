@@ -4,7 +4,6 @@
 package org.luiz.condominio.delegate;
 
 import java.util.List;
-
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
@@ -26,7 +25,7 @@ public class EstadoDelegateTest {
 	 */
 	@Test
 	public void teste1_Incluir() {
-		Estado objetoTest = new Estado();
+        Estado objetoTest = new Estado();
 		objetoTest.setNome("Teste");
 		objetoTest.setSigla("XX");
 
