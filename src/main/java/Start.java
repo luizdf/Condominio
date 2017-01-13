@@ -1,6 +1,4 @@
 
-import org.eclipse.jetty.server.Server;
-import org.eclipse.jetty.webapp.WebAppContext;
 
 public class Start {
 
@@ -11,7 +9,7 @@ public class Start {
         }
         String webappDirLocation = "src/main/webapp/";
 
-        Server server = new Server(Integer.valueOf(webPort));
+/*        Server server = new Server(Integer.valueOf(webPort));
         WebAppContext root = new WebAppContext();
         root.setContextPath("/");
         root.setDescriptor(webappDirLocation + "/WEB-INF/web.xml");
@@ -20,6 +18,6 @@ public class Start {
 
         server.setHandler(root);
         server.start();
-        server.join();
+        server.join();*/
     }
 }
