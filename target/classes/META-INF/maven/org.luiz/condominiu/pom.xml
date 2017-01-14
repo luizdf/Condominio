@@ -51,6 +51,15 @@
 		    <version>4.12</version>
 		</dependency>
 
+		<!-- JETTY DEPENDENCIES FOR TESTING -->
+		<!-- https://mvnrepository.com/artifact/org.eclipse.jetty.aggregate/jetty-all-server -->
+		<dependency>
+		    <groupId>org.eclipse.jetty.aggregate</groupId>
+		    <artifactId>jetty-all-server</artifactId>
+		    <version>${jetty.version}</version>
+			<!--  needs to be compile time as we bring our own embedded Jetty -->
+			<scope>compile</scope>
+		</dependency>
 
 		<!-- MYSQL DEPENDENCIES -->
 		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
@@ -126,7 +135,7 @@
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>appassembler-maven-plugin</artifactId>
-				<version>1.1.1</version>
+				<version>1.10</version>
 				<executions>
 					<execution>
 						<phase>package</phase>
@@ -140,7 +149,7 @@
 							<programs>
 								<program>
 									<mainClass>Start</mainClass>
-									<name>webapp</name>
+									<name>condominio</name>
 								</program>
 							</programs>
 						</configuration>

@@ -16,7 +16,7 @@ public final class JpaFactory {
   
     static {
         BasicConfigurator.configure();
-		fabrica = Persistence.createEntityManagerFactory("condominiu");
+		fabrica = Persistence.createEntityManagerFactory("Condominio");
 		entityManager = fabrica.createEntityManager();
     }
     
