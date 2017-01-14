@@ -1,1 +1,1 @@
-web:    java -jar target/condominiu.jar
+web:    sh target/bin/condominio
