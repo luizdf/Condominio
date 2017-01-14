@@ -1,3 +1,7 @@
+/**
+* Classe de Inicialização da Aplicação no Heroku
+*/
+
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.webapp.WebAppContext;
 
